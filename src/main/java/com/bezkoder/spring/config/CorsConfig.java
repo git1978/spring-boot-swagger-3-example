@@ -13,7 +13,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("spring-boot-swagger-3-example-cge4c4bhfwfagkcw.canadacentral-01.azurewebsites.net") // Met à jour avec ton domaine Azure
+                		.allowedOrigins("spring-boot-swagger-3-example-cge4c4bhfwfagkcw.canadacentral-01.azurewebsites.net") // Met à jour avec ton domaine Azure
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true);
