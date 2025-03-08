@@ -12,23 +12,20 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    permissions:
-      contents: read #This is required for actions/checkout
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Set up Java version
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v1
         with:
           java-version: '17'
-          distribution: 'microsoft'
 
       - name: Build with Maven
         run: mvn clean install
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
@@ -39,28 +36,18 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: java-app
-      
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0318E6FA41E8473D8B330B4F1178FE40 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B2336CDBFB9542F68DCEAAD949002B9E }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C8C5006717B6414FA3C9502056F5DF07 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
+        uses: azure/webapps-deploy@v2
         with:
           app-name: 'spring-boot-swagger-3-example'
           slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_62BFC8A99D8C43CBB866FC568602F3A6 }}
           package: '*.jar'
-          
