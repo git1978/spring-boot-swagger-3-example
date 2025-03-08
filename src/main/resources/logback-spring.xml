@@ -2,7 +2,7 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/spring-boot-swagger-3-example.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>https://storegdt.blob.core.windows.net/container-logs/logs/spring-boot-swagger-3-example-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>https://storegdt.blob.core.windows.net/container-logs/spring-boot-swagger-3-example-%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
