@@ -1,0 +1,46 @@
+2025-03-08 11:52:32 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Starting SpringBootSwagger3ExampleApplicationTests using Java 23.0.2 with PID 84409 (started by younessabach in /Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3)
+2025-03-08 11:52:32 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-03-08 11:52:32 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Started SpringBootSwagger3ExampleApplicationTests in 0.98 seconds (process running for 1.337)
+2025-03-08 11:53:11 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Starting SpringBootSwagger3ExampleApplicationTests using Java 23.0.2 with PID 85094 (started by younessabach in /Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3)
+2025-03-08 11:53:11 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-03-08 11:53:12 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Started SpringBootSwagger3ExampleApplicationTests in 1.055 seconds (process running for 1.452)
+2025-03-08 11:53:17 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplication - Starting SpringBootSwagger3ExampleApplication using Java 23.0.2 with PID 85246 (/Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3/target/classes started by younessabach in /Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3)
+2025-03-08 11:53:17 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-08 11:53:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-08 11:53:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-08 11:53:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-08 11:53:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-03-08 11:53:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-08 11:53:18 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 405 ms
+2025-03-08 11:53:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-08 11:53:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-08 11:53:18 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplication - Started SpringBootSwagger3ExampleApplication in 0.996 seconds (process running for 1.125)
+2025-03-08 11:53:21 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-08 11:53:21 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-08 11:53:21 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-03-08 11:53:21 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 121 ms
+2025-03-08 11:53:23 [http-nio-8080-exec-5] INFO  c.b.s.swagger.service.FileService - Démarrage du traitement...
+2025-03-08 11:53:23 [http-nio-8080-exec-5] INFO  c.b.s.swagger.service.FileService - path file : /Users/younessabach/Documents/dev/workspaceJava/spring-boot-swagger-3-example
+2025-03-08 11:54:22 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Starting SpringBootSwagger3ExampleApplicationTests using Java 23.0.2 with PID 86506 (started by younessabach in /Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3)
+2025-03-08 11:54:22 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-03-08 11:54:23 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Started SpringBootSwagger3ExampleApplicationTests in 1.114 seconds (process running for 1.507)
+2025-03-08 11:54:28 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplication - Starting SpringBootSwagger3ExampleApplication using Java 23.0.2 with PID 86586 (/Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3/target/classes started by younessabach in /Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3)
+2025-03-08 11:54:28 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-08 11:54:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-03-08 11:54:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-08 11:54:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-08 11:54:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-03-08 11:54:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-08 11:54:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 414 ms
+2025-03-08 11:54:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-08 11:54:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-03-08 11:54:29 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplication - Started SpringBootSwagger3ExampleApplication in 1.005 seconds (process running for 1.142)
+2025-03-08 11:54:31 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-08 11:54:31 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-08 11:54:31 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-08 11:54:31 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 118 ms
+2025-03-08 11:54:33 [http-nio-8080-exec-5] INFO  c.b.s.swagger.service.FileService - Démarrage du traitement...
+2025-03-08 11:54:33 [http-nio-8080-exec-5] INFO  c.b.s.swagger.service.FileService - path file : /Users/younessabach/Documents/dev/workspaceJava/spring-boot-swagger-3-example
+2025-03-08 12:06:08 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Starting SpringBootSwagger3ExampleApplicationTests using Java 23.0.2 with PID 188 (started by younessabach in /Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3)
+2025-03-08 12:06:08 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-03-08 12:06:09 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Started SpringBootSwagger3ExampleApplicationTests in 1.031 seconds (process running for 1.453)
