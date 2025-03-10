@@ -1,9 +1,6 @@
 trigger:
 - develop
 
-pool:
-  vmImage: ubuntu-latest  # Uses the latest Ubuntu image
-
 steps:
 - checkout: self  # Ensures the source code is checked out
 
