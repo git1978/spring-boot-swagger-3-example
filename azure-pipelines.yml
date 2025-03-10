@@ -1,23 +1,19 @@
 trigger:
 - develop
 
-steps:
-- checkout: self  # Ensures the source code is checked out
+pool:
+  vmImage: ubuntu-latest
 
-# Set up Java 17 using Microsoft-provided JDK
+steps:
+- checkout: self  # S'assure que le code source est bien récupéré
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'  # Increases memory if needed
-    javaHomeOption: 'JDKVersion'  # Uses a specific Java version
-    jdkVersionOption: '17'  # Use Java 17
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '17'  # Java 17
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean install'
-
-# Optional: Upload the built JAR as an artifact
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: 'target/*.jar'  # Adjust if your JAR is located elsewhere
-    artifactName: 'drop'
+    goals: 'package'
