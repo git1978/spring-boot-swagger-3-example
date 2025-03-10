@@ -9,11 +9,12 @@ variables:
   MAVEN_OPTS: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
 
 steps:
-- script: |
-    echo "Setting up Java 17"
-    sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
-    java -version
-  displayName: 'Set up Java 17'
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '17'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+  displayName: 'Install Java 17'
 
 - task: Cache@2
   inputs:
