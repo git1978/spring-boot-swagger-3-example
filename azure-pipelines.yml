@@ -1,19 +1,43 @@
 trigger:
-- develop
+- main  # Trigger pipeline on changes to the main branch
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'  # Use Ubuntu as the build agent
+
+variables:
+  MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
+  MAVEN_OPTS: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
 
 steps:
-- checkout: self  # S'assure que le code source est bien récupéré
+- script: |
+    echo "Setting up Java 17"
+    sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+    java -version
+  displayName: 'Set up Java 17'
+
+- task: Cache@2
+  inputs:
+    key: 'maven | "$(Agent.OS)" | pom.xml'
+    restoreKeys: |
+      maven | "$(Agent.OS)"
+    path: $(MAVEN_CACHE_FOLDER)
+  displayName: 'Cache Maven local repository'
 
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '17'  # Java 17
-    jdkArchitectureOption: 'x64'
+    goals: 'clean package'
+    options: '-DskipTests=false'  # Run tests during the build
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    sonarQubeRunAnalysis: false
+  displayName: 'Build and Test with Maven'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+  displayName: 'Publish Build Artifacts'
