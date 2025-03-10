@@ -25,7 +25,7 @@ jobs:
         run: mvn clean install
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'gdt'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5A06291692C647929BE91A5862C21168 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1F8E6C72E95E4B4886909D4B55E291AE }}
           package: '*.jar'
