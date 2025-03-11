@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'spring-boot-swagger-3-example'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F0BD3479429F458ABE40ED6916953B64 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_120B8895E0DC48E388443B1C813E8CB3 }}
           package: '*.jar'
