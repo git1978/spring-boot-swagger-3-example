@@ -1,22 +1,49 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
-- develop
+  branches:
+    include:
+      - main
+      - develop
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
+
+variables:
+  MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
+  JAVA_VERSION: '17'
+  MAVEN_VERSION: '3.8.6'
 
 steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+  - task: JavaToolInstaller@0
+    inputs:
+      versionSpec: $(JAVA_VERSION)
+      jdkArchitecture: 'x64'
+      jdkSource: 'PreInstalled'
+
+  - task: Cache@2
+    inputs:
+      key: 'maven | "$(Agent.OS)" | pom.xml'
+      path: $(MAVEN_CACHE_FOLDER)
+      cacheHitVar: MAVEN_CACHE_RESTORED
+
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean package'
+      options: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      javaHomeOption: 'Path'
+      mavenVersionOption: 'Default'
+      mavenOptions: '-Xmx1024m'
+      sonarQubeRunAnalysis: false
+
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)/target'
+      Contents: '*.jar'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: 'drop'
