@@ -1,0 +1,3 @@
+2025-03-24 09:55:46 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Starting SpringBootSwagger3ExampleApplicationTests using Java 17.0.14 with PID 31726 (started by younessabach in /Users/younessabach/Documents/dev/workspaceJava/cloud-api-javas3)
+2025-03-24 09:55:46 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-03-24 09:55:47 [main] INFO  c.b.s.s.SpringBootSwagger3ExampleApplicationTests - Started SpringBootSwagger3ExampleApplicationTests in 1.088 seconds (process running for 1.456)
