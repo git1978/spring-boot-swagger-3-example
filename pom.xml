@@ -52,6 +52,11 @@
 		        <artifactId>logback-classic</artifactId>
 		        <version>1.4.5</version>
     		</dependency>
+    		<dependency>
+			    <groupId>com.azure</groupId>
+			    <artifactId>azure-storage-blob</artifactId>
+			    <version>12.24.0</version>
+			</dependency>
 	</dependencies>
 
 	<build>

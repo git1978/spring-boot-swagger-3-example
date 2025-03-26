@@ -37,7 +37,8 @@ public class FileController {
   @GetMapping("/file")
   public ResponseEntity<List<Product>> getFileContent() {
     try {
-      List<Product> fileList = fileService.readFile();
+       List<Product> fileList = fileService.readFileFromBlob();
+     //List<Product> fileList = fileService.readFile();
       return new ResponseEntity<List<Product>>(fileList, HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
