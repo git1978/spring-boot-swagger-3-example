@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -9,7 +11,7 @@
 	</parent>
 	<groupId>com.bezkoder</groupId>
 	<artifactId>api-sp3dk17</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>api-sp3dk17</name>
 	<description>Spring Boot and Swagger 3 example: Rest API Documentation</description>
 	<properties>
@@ -17,9 +19,9 @@
 	</properties>
 	<scm>
 	<connection>scm:git:https://https://github.com/git1978/spring-boot-swagger-3-example.git</connection>
-	<developerConnection>scm:git:https://github.com/git1978/spring-boot-swagger-3-exampleg.git</developerConnection>
+	<developerConnection>scm:git:https://github.com/git1978/spring-boot-swagger-3-exampleg.it</developerConnection>
 	<url>https://github.com/git1978/spring-boot-swagger-3-example.git</url>
-	<tag>v1.0</tag>
+	<tag>HEAD</tag>
 	</scm>
 	<dependencies>
 		<dependency>
